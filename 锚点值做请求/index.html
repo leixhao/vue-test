@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="background-color:red;height:150px;">
+        <a href="#/register">注册页面</a>
+        <a href="#/login">登录页面</a>
+    </div>
+
+    <div style="background-color:yellowgreen;height:200px;" id="a">
+
+    </div>
+
+
+    <div style="background-color:greenyellow; height:150px;">
+        这个是页面
+    </div>
+
+    <script> 
+        //监视锚点值改变
+        window.addEventListener('hashchange',function(){
+            //获取hash值
+            console.log(location);
+            var hash = location.hash;
+            console.log(hash);
+            var html = '';
+            switch(hash){
+                case '#/register':
+                    html = '<h1>欢迎注册</h1>';
+                break;
+                case '#/login':
+                    html = '<h1>欢迎登陆</h1>';
+                break;
+            }
+
+            document.querySelector('#a').innerHTML = html;
+        })
+        
+    
+    </script>
+</body>
+</html>
